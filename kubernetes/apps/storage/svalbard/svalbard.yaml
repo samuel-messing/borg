@@ -1,0 +1,35 @@
+piVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-svalbard-media
+  namespace: default
+spec:
+  storageClassName: media
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.1.154
+    path: "/mnt/svalbard/media"
+  mountOptions:
+  - nfsvers=3
+  - tcp
+  - intr
+  - hard
+  - noatime
+  - nodiratime
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-svalbard-media
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: media
+  resources:
+    requests:
+      storage: 1Mi
