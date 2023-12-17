@@ -82,7 +82,7 @@ spec:
         medium: Memory
       nfs-svalbard-media:
         enabled: true
-        existingClaim: nfs-svalbard-media
+        existingClaim: nfs-svalbard-media-pvc
         mountPath: /data
         readOnly: false
 
