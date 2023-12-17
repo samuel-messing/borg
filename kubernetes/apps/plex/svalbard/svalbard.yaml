@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.1.154
-    path: "/mnt/svalbard"
+    path: "/mnt/svalbard/media"
   mountOptions:
   - nfsvers=3
   - tcp

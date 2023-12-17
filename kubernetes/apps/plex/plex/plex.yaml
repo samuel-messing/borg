@@ -80,7 +80,7 @@ spec:
         enabled: true
         type: emptyDir
         medium: Memory
-      nfs-svalbard-media:
+      nfs-svalbard-media-pvc:
         enabled: true
         existingClaim: nfs-svalbard-media-pvc
         mountPath: /data
