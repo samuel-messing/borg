@@ -4,7 +4,6 @@ metadata:
   name: nfs-svalbard-media
   namespace: plex
 spec:
-  storageClassName: media
   capacity:
     storage: 1Ti
   accessModes:
@@ -29,7 +28,6 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: media
   resources:
     requests:
       storage: 1Mi
