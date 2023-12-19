@@ -85,8 +85,8 @@ spec:
         existingClaim: nfs-svalbard-media-pvc
         mountPath: /data
         readOnly: false
-
-    nodeSelector:
+#
+#    nodeSelector:
       #intel.feature.node.kubernetes.io/gpu: "true"
 
     resources:
