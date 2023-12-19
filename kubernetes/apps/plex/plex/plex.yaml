@@ -80,11 +80,11 @@ spec:
         enabled: true
         type: emptyDir
         medium: Memory
-      nfs-svalbard-media-pvc:
-        enabled: true
-        existingClaim: nfs-svalbard-media-pvc
-        mountPath: /data
-        readOnly: false
+#      nfs-svalbard-media-pvc:
+#        enabled: true
+#        existingClaim: nfs-svalbard-media-pvc
+#        mountPath: /data
+#        readOnly: false
 #
 #    nodeSelector:
       #intel.feature.node.kubernetes.io/gpu: "true"
