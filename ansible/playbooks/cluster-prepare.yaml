@@ -91,6 +91,25 @@
               search .
               nameserver 1.1.1.1
 
+    - name: iSCSI Multipath Configuration
+      notify: Reboot
+      block:
+        - name: Remove existing /etc/multipath.conf
+          ansible.builtin.file:
+            attributes: -i
+            path: /etc/multipath.conf
+            state: absent
+        - name: Add custom /etc/multipath.conf
+          ansible.builtin.copy:
+            attributes: +i
+            mode: '0644'
+            dest: /etc/multipath.conf
+            content: |
+              defaults {
+                user_friendly_names yes
+                find_multipaths yes
+              }
+
     - name: System Configuration
       notify: Reboot
       block:
