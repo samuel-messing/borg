@@ -5,7 +5,7 @@ metadata:
   name: &app plex
   namespace: flux-system
 spec:
-  targetNamespace: networking
+  targetNamespace: plex
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
