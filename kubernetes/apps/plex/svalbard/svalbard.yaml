@@ -5,7 +5,7 @@ metadata:
   namespace: plex
 spec:
   capacity:
-    storage: 1Ti
+    storage: 1Mi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -13,7 +13,7 @@ spec:
     server: 192.168.1.154
     path: "/mnt/svalbard/media"
   mountOptions:
-  - nfsvers=3
+  - nfsvers=4
   - tcp
   - intr
   - hard
