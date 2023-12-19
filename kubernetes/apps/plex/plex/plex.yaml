@@ -96,4 +96,4 @@ spec:
         #memory: 2000Mi
       limits:
         #gpu.intel.com/i915: 1
-        memory: 5000Mi
+        #c memory: 5000Mi
