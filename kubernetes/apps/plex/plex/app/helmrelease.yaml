@@ -68,11 +68,9 @@ spec:
       supplementalGroups: [44, 109, 10000]
 
     persistence:
-#      config:
-#        enabled: false
-#        storageClass: "rook-ceph-block"
-#        accessMode: ReadWriteOnce
-#        size: 45Gi
+      config:
+        enabled: false
+        existingClaim: *app
       transcode:
         enabled: true
         type: emptyDir
