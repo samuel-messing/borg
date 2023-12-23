@@ -94,11 +94,6 @@
     - name: iSCSI Multipath Configuration
       notify: Reboot
       block:
-        - name: Remove existing /etc/multipath.conf
-          ansible.builtin.file:
-            attributes: -i
-            path: /etc/multipath.conf
-            state: absent
         - name: Add custom /etc/multipath.conf
           ansible.builtin.copy:
             attributes: +i
@@ -109,6 +104,14 @@
                 user_friendly_names yes
                 find_multipaths yes
               }
+        - name: Enable multipath-tools
+          ansible.builtin.systemd_service:
+            state: started
+            name: multipath-tools
+        - name: Enable open-iscsi
+          ansible.builtin.systemd_service:
+            state: started
+            name: open-iscsi
 
     - name: System Configuration
       notify: Reboot
